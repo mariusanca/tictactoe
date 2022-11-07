@@ -1,0 +1,63 @@
+.title {
+    margin: 20px 10px 10px 70px;
+    color: blue;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 55px;
+
+}
+
+.congrats {
+    margin: 20px 10px 10px -120px;
+    color: blue;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 55px;
+}
+
+.turn {
+    margin: 10px 10px 10px 85px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+  }
+
+  .item-grid {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+
+  .btn {
+    width: 100px;
+    height: 100px;
+  }
+
+  .player {
+    font-size: 50px;
+  }
+
+  #player-win {
+    color: brown;
+    font-weight: bold;
+  }
+
+  .no-winner {
+    margin-left: -100px;
+  }
+
+  .winner-button {
+    height: 99px;
+    width: 99px;
+    background-color: red;
+  }
+
+  #reload-button {
+    height: 50px;
+    margin-left: 99px;
+    margin-top: 20px;
+  }
