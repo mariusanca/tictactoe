@@ -62,13 +62,14 @@ function foundWinner(line1, column1, line2, column2, line3, column3) { //this fu
 }
 
 function insert(line, column) { //this function inserts X or O on the selected grid
-    if(matrix[line][column] >= 3 && found === 0) {
+    if(found === 0) {
         matrix[line][column] = turn;
         if (turn === 1) {
             document.getElementById('' + line + column).innerHTML = '<div class="player">X</div>';
         } else {
             document.getElementById('' + line + column).innerHTML = '<div class="player">O</div>';
         }
+        document.getElementById('' + line + column).disabled = true;
         ++click;
         changeTurn();
         if (click >= 5) {
