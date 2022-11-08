@@ -1,6 +1,6 @@
 let turn = 1; //turn 1 means X player, turn 2 means O player
-let click = 0;
-let found = 0;
+let clicks = 0;
+let winnerFound = 0;
 const zero = '0', one = '1', two = '2';
 let number = 3; //setting all elements of the matrix with different value starting from 3 to be able to difference player X (1) and player O (2)
 let matrix = [];
@@ -19,10 +19,6 @@ function changeTurn() { //this function changes player turn
     } else {
         document.getElementById('player').innerHTML = 'X player turn';
         turn = 1;
-    }
-    for (let lineIndex = 0; lineIndex <= 2; ++lineIndex) {
-        for(let columnIndex = 0; columnIndex <= 2; ++columnIndex) {
-        }
     }
 }
 
@@ -58,23 +54,23 @@ function foundWinner(line1, column1, line2, column2, line3, column3) { //this fu
     document.getElementById('' + line1 + column1).className = "winner-button";
     document.getElementById('' + line2 + column2).className = "winner-button";
     document.getElementById('' + line3 + column3).className = "winner-button";
-    found = 1;
+    winnerFound = 1;
 }
 
 function insert(line, column) { //this function inserts X or O on the selected grid
-    if(matrix[line][column] >= 3 && found === 0) {
+    if(matrix[line][column] >= 3 && winnerFound === 0) {
         matrix[line][column] = turn;
         if (turn === 1) {
             document.getElementById('' + line + column).innerHTML = '<div class="player">X</div>';
         } else {
             document.getElementById('' + line + column).innerHTML = '<div class="player">O</div>';
         }
-        ++click;
+        ++clicks;
         changeTurn();
-        if (click >= 5) {
+        if (clicks >= 5) {
             checkWinner();
         }
-        if (click === 9 && found === 0) {
+        if (clicks === 9 && winnerFound === 0) {
             document.getElementById('player').innerHTML = '<h4 class="no-winner">There is no winner! Please try again!</h2>';
         }
     }
